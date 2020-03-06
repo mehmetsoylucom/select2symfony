@@ -1,0 +1,24 @@
+{
+  "name": "select2",
+  "homepage": "https://github.com/mehmetsoylucom/select2symfony",
+  "authors": [
+    "mehmetsoylucom <mehmet@soylu.net>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-slugify": "^1.2.5",
+    "speakingurl": "^14.0.1",
+    "jquery": "^3.4.1",
+    "bootstrap": "^4.4.1",
+    "select2": "^4.0.13"
+  }
+}

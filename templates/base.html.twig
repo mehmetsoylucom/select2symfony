@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        <link rel="stylesheet" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/select2/dist/css/select2.css') }}">
+
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    <div class="container">
+        {% block body %}{% endblock %}
+    </div>
+    <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+
+    <script src="{{ asset('bower_components/speakingurl/speakingurl.min.js') }}"></script>
+    <script src="{{ asset('bower_components/jquery-slugify/dist/slugify.js') }}"></script>
+    <script src="{{ asset('bower_components/select2/dist/js/select2.full.js') }}"></script>
+    <script src="{{ asset('bundles/tetranzselect2entity/js/select2entity.js') }}"></script>
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

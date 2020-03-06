@@ -1,0 +1,68 @@
+# config/routes.yaml
+
+# the "app_lucky_number" route name is not important yet
+#app_lucky_number:
+#  #host:       "{subdomain}.example.com"
+#  path: /lucky/number/{repeater}
+#  controller: App\Controller\LuckyController::number
+#  methods: GET
+#  defaults:
+#    repeater: 1
+#  requirements:
+#    repeater: '\d+'
+#    extraParameterSample: "Hello world!"
+#    #locale: 'en|tr'
+#    #subdomain: m|mobile
+#  #locale:      en
+#  #format: html
+#  #schemes:    [https]
+#
+#site_content_show:
+#  host: "{subdomain}.%domain%"
+#  path: "/{slug}.htm"
+#  controller: App\Controller\Site\ContentController::show
+#  requirements:
+#    slug: .*
+#    subdomain: ^(?!www).+
+
+
+# CATEGORY
+
+category_index:
+    path: /category
+    controller: App\Controller\CategoryController::index
+
+category_new:
+    path: /category/new
+    controller: App\Controller\CategoryController::new
+
+category_show:
+    path: /category/{id}
+    controller: App\Controller\CategoryController::show
+
+category_edit:
+    path: /category/{id}/edit
+    controller: App\Controller\CategoryController::edit
+
+category_json:
+    path: /category/categorySelect2Json
+    controller: App\Controller\CategoryController::categorySelect2Json
+
+
+# PRODUCT
+
+product_index:
+    path: /product
+    controller: App\Controller\ProductController::index
+
+product_new:
+    path: /product/new
+    controller: App\Controller\ProductController::new
+
+product_show:
+    path: /product/{id}
+    controller: App\Controller\ProductController::show
+
+product_edit:
+    path: /product/{id}/edit
+    controller: App\Controller\ProductController::edit
