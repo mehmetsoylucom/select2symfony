@@ -1,3 +1,4 @@
+/public/bower_components/
 .idea
 ###> symfony/framework-bundle ###
 /.env.local
@@ -5,7 +6,6 @@
 /.env.*.local
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
-/public/bower_components/
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
@@ -15,3 +15,4 @@
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
+*.pmc
