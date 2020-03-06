@@ -10,6 +10,13 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+
+    <nav class="nav justify-content-center">
+        <a href="{{ path('category_index') }}" class="nav-link">Categories</a>
+        <a href="{{ path('product_index') }}" class="nav-link">Products</a>
+    </nav>
+
+
     <div class="container">
         {% block body %}{% endblock %}
     </div>

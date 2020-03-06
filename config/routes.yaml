@@ -28,6 +28,10 @@
 
 # CATEGORY
 
+category_ajax_search_select2:
+    path: /category/category_ajax_search_select2
+    controller: App\Controller\CategoryController::categorySelect2Json
+
 category_index:
     path: /category
     controller: App\Controller\CategoryController::index
@@ -44,10 +48,10 @@ category_edit:
     path: /category/{id}/edit
     controller: App\Controller\CategoryController::edit
 
-category_json:
-    path: /category/categorySelect2Json
-    controller: App\Controller\CategoryController::categorySelect2Json
-
+category_delete:
+    methods: DELETE
+    path: /category/{id}
+    controller: App\Controller\CategoryController::delete
 
 # PRODUCT
 
@@ -66,3 +70,8 @@ product_show:
 product_edit:
     path: /product/{id}/edit
     controller: App\Controller\ProductController::edit
+
+product_delete:
+    methods: DELETE
+    path: /product/{id}
+    controller: App\Controller\ProductController::delete
