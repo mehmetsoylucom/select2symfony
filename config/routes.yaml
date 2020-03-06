@@ -29,7 +29,7 @@
 # CATEGORY
 
 category_ajax_search_select2:
-    path: /category/category_ajax_search_select2
+    path: /category_ajax_search_select2
     controller: App\Controller\CategoryController::categorySelect2Json
 
 category_index:

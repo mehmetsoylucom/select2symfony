@@ -13,6 +13,26 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CategoryController extends AbstractController
 {
+
+    public function categorySelect2Json(Request $request)
+    {
+        $em = $this->getDoctrine()->getRepository(Category::class);
+
+        $query = $em->createQueryBuilder('l')
+            ->where("l.title LIKE :term")
+            ->setParameter('term', '%' . $request->query->get('q') . '%')
+            ->getQuery()
+            ->getArrayResult();
+
+        $jsonArr = [];
+
+        foreach ($query as $item) {
+            $jsonArr[] = ['id' => $item['id'], 'text' => $item['title']];
+        }
+
+        return new JsonResponse($jsonArr);
+    }
+
     public function index(CategoryRepository $categoryRepository): Response
     {
         return $this->render('category/index.html.twig', [
@@ -78,22 +98,4 @@ class CategoryController extends AbstractController
         return $this->redirectToRoute('category_index');
     }
 
-    public function categorySelect2Json(Request $request)
-    {
-        $em = $this->getDoctrine()->getRepository(Category::class);
-
-        $query = $em->createQueryBuilder('l')
-            ->where("l.title LIKE :term")
-            ->setParameter('term', '%' . $request->query->get('q') . '%')
-            ->getQuery()
-            ->getArrayResult();
-
-        $jsonArr = [];
-
-        foreach ($query as $item) {
-            $jsonArr[] = ['id' => $item['id'], 'text' => $item['title']];
-        }
-
-        return new JsonResponse($jsonArr);
-    }
 }

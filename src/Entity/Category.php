@@ -28,6 +28,17 @@ class Category
      */
     private $slug;
 
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Product", mappedBy="category")
      */
@@ -35,7 +46,13 @@ class Category
 
     public function __construct()
     {
+        $this->slug =  $this->title;
         $this->products = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->title;
     }
 
     public function getId(): ?int
@@ -51,18 +68,6 @@ class Category
     public function setTitle(string $title): self
     {
         $this->title = $title;
-
-        return $this;
-    }
-
-    public function getSlug(): ?string
-    {
-        return $this->slug;
-    }
-
-    public function setSlug(string $slug): self
-    {
-        $this->slug = $slug;
 
         return $this;
     }
